@@ -1,0 +1,111 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Anharmonic Oscillator</title>
+    <style>
+         
+        #contentContainer {
+            width: 200px;
+            height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+ 
+        #particle {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+        }
+ 
+    </style>
+</head>
+ 
+<body>
+
+<h3>Anharmonic Oscillator</h3>
+
+<p>
+  <input type="button" onClick="stop()" value="stop">
+  <input type="button" onClick="start()" value="start">
+  <input type="button" onClick="velocity()" value="speed"> x<span id="_power">0</span><br>
+<p>
+  Counter:  <span id="clock">0</span><br>
+</p>
+</p>
+
+<div id="contentContainer">
+    <div id="particle"></div>
+</div>
+
+<script>
+/*##########################################*/
+  
+var unity = 0;
+var _unity = 0 ;
+var power = 0;
+var nb_power = 0;
+var particle = document.querySelector("#particle");
+
+particle.style.transform = `translate3d(${50}px, ${_unity}px, 0)`;
+
+/*##########################################*/
+
+function animate() {
+unity += 10;
+document.getElementById("clock").innerHTML = unity;
+
+if ( unity <=200 ) {
+_unity -= 10;
+particle.style.transform = `translate3d(${50}px, ${_unity}px, 0)`;
+}
+if ( unity >= 400) {
+_unity += 10;
+particle.style.transform = `translate3d(${50}px, ${_unity}px, 0)`;
+}
+if ( unity >= 600) {
+_unity -= 10;
+if ( unity == 800 ) {
+unity = 0;
+}
+}
+if (power == 1) {
+ requestAnimationFrame(animate);
+} 
+}
+
+/*##########################################*/
+
+function stop() {
+power = 0;
+nb_power = 0;
+unity = 0;
+_unity = 0;
+document.getElementById("_power").innerHTML = nb_power;
+document.getElementById("clock").innerHTML = 0;
+}
+function start() {
+if (power == 0) {
+power = 1;
+nb_power = 1;
+document.getElementById("_power").innerHTML = nb_power;
+animate();
+}
+}
+function velocity() {
+if (power == 1) {
+if (nb_power == 60) {
+stop();
+} else {
+nb_power += 1 ;
+document.getElementById("_power").innerHTML = nb_power;
+animate();
+}
+}
+}
+</script>
+
+</body>
+</html>

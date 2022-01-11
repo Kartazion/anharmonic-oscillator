@@ -5,4 +5,6 @@ The aim of this experiment is to be able to prove that the duplication of a sing
 
 It can simulate the superposition of quantum state through a single moving particle by its rapid oscillation.
 
+Qbit
+
 ref: Explain Quantum Physics with a Single-Particle in Motion --> https://sites.google.com/site/kartazion/explain-quantum-physics-with-a-single-particle-in-motion

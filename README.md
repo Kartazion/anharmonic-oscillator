@@ -12,3 +12,6 @@ ref: Explain Quantum Physics with a Single-Particle in Motion --> https://sites.
 If you want to see the animation click here --> https://www.kartazion.com/anharmonic_oscillator.html and go up to 20 for perfect harmony.
 
 Please feel free to improve this program and acknowledge this source so that you can distribute it with your modifications.
+You just have to Fork this source, once finished your modifications, you can make a Pull requests to add it here.
+
+Thanks.
